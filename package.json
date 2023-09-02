@@ -1,0 +1,63 @@
+{
+  "name": "vscoderpc",
+  "displayName": "VS Code RPC",
+  "description": "Discord Rich Presence available in VS Code.",
+  "version": "1.0.0",
+  "publisher": "theuplauncher",
+  "repository": {
+    "url": "https://github.com/uplauncher/vscoderpc"
+  },
+  "engines": {
+    "vscode": "^1.81.0"
+  },
+  "categories": [
+    "Visualization",
+    "Other"
+  ],
+  "keywords": [
+    "discord",
+    "discord rpc",
+    "discord rich presence",
+    "rich presence",
+    "rpc",
+    "vscode rpc"
+],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "configuration": {
+      "properties": {
+        "vscoderpc.privateMode": {
+          "type": "boolean",
+          "default": false,
+          "description": "Do not display file and workspace names."
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "vscoderpc.enableRPC",
+        "title": "Enable Discord RPC feature."
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.81.0",
+    "@vscode/test-electron": "^2.3.4",
+    "eslint": "^8.47.0",
+    "glob": "^10.3.3",
+    "mocha": "^10.2.0",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "discord-rpc": "^4.0.1"
+  }
+}

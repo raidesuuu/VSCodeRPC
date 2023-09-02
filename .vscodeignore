@@ -1,0 +1,9 @@
+.vscode/**
+.vscode-test/**
+node_modules/**
+assets/**
+.gitignore
+.yarnrc
+**/jsconfig.json
+**/*.map
+**/.eslintrc.json

@@ -2,7 +2,7 @@
   "name": "vscoderpc",
   "displayName": "VS Code RPC",
   "description": "Discord Rich Presence available in VS Code.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "theuplauncher",
   "repository": {
     "url": "https://github.com/uplauncher/vscoderpc"
@@ -21,7 +21,7 @@
     "rich presence",
     "rpc",
     "vscode rpc"
-],
+  ],
   "activationEvents": [
     "onStartupFinished"
   ],
@@ -35,13 +35,7 @@
           "description": "Do not display file and workspace names."
         }
       }
-    },
-    "commands": [
-      {
-        "command": "vscoderpc.enableRPC",
-        "title": "Enable Discord RPC feature."
-      }
-    ]
+    }
   },
   "scripts": {
     "lint": "eslint .",

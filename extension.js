@@ -20,7 +20,7 @@ function activate(context) {
 		const configuration = vscode.workspace.getConfiguration("vscoderpc");
 		if (!configuration.get("privateMode")) {
 			rpc.setActivity({
-				details: vscode.workspace.name ? `In workspace "${vscode.workspace.name}".` : "No Workspaces",
+				details: vscode.workspace.name ? `In workspace "${vscode.workspace.name}".` : "There is no active workspace.",
 				state: `Editing file "${path.basename(ev.fileName)}".`,
 				startTimestamp: date,
 				largeImageKey: ev.languageId ? ev.languageId : "json",
@@ -40,7 +40,7 @@ function activate(context) {
 		const configuration = vscode.workspace.getConfiguration("vscoderpc");
 		if (vscode.window.activeTextEditor?.document.fileName && !configuration.get("privateMode")) {
 			rpc.setActivity({
-				details: vscode.workspace.name ? `In workspace "${vscode.workspace.name}".` : "No Workspaces",
+				details: vscode.workspace.name ? `In workspace "${vscode.workspace.name}".` : "There is no active workspace.",
 				state: `Editing file "${path.basename(vscode.window.activeTextEditor?.document.fileName)}".`,
 				startTimestamp: date,
 				largeImageKey: vscode.window.activeTextEditor?.document.languageId,
@@ -48,8 +48,8 @@ function activate(context) {
 			});
 		} else if (!vscode.window.activeTextEditor?.document.fileName && !configuration.get("privateMode")) {
 			rpc.setActivity({
-				details: vscode.workspace.name ? `In workspace ${vscode.workspace.name}.` : "No Workspaces",
-				state: `No Files.`,
+				details: vscode.workspace.name ? `In workspace ${vscode.workspace.name}.` : "There is no active workspace.",
+				state: `There are no active files.`,
 				startTimestamp: date,
 				largeImageKey: "vscode",
 				largeImageText: `Visual Studio Code v${vscode.version}`
